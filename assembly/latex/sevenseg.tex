@@ -1,0 +1,212 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+
+\geometry{top=1in,bottom=1.5cm,left=1.5cm,right=1.5cm}
+\pagestyle{empty}
+\sectionfont{\color{blue}}
+
+\begin{document}
+
+\thispagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=0.3\textwidth]{image/iiitb_logo.png}}
+\fancyhead[R]{
+Name: Pirjade Sabahat Rehan \\
+Batch: COMETFWC056 \\
+Date: 22 February 2026
+}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\vspace*{4cm}
+\begin{center}
+{\Huge \textbf{\textcolor{blue}{GATE IN 2009 -- Question 8 Complete Analysis}}}
+\end{center}
+
+\section*{Question 8}
+
+\textbf{Q.8} The minimal sum-of-products expression for the logic function $f$ represented by the given Karnaugh map is:
+
+\vspace{0.5cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{14pt}
+\begin{tabular}{c|cccc}
+ & \multicolumn{4}{c}{\textbf{PQ}} \\
+\textbf{RS} & 00 & 01 & 11 & 10 \\
+\hline
+00 & 0 & 1 & 0 & 0 \\
+01 & 0 & 1 & 1 & 1 \\
+11 & 1 & 1 & 1 & 0 \\
+10 & 0 & 0 & 1 & 0 \\
+\end{tabular}
+\end{center}
+
+\vspace{0.8cm}
+
+\begin{minipage}{0.45\textwidth}
+(A) $QS + PR'S + PQR + P'RS + P'QR'$ \\[0.3cm]
+(B) $Q'S + P'RS + P'Q'R + PR'S + PQ'R$
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+(C) $P'RS' + P'Q'R + PR'S + PQ'R$ \\[0.3cm]
+(D) $PR'S + PQR + P'RS + P'QR'$
+\end{minipage}
+
+\vspace{0.7cm}
+
+\textbf{Answer: (A) $QS + PR'S + PQR + P'RS + P'QR'$}
+
+\begin{flushright}
+(GATE IN 2009)
+\end{flushright}
+
+\section*{Question Analysis}
+
+\begin{itemize}
+
+\item The given problem involves a four-variable logic function $f(P,Q,R,S)$ represented using a Karnaugh map.
+
+\item The variables $P$ and $Q$ form the column indices, while $R$ and $S$ form the row indices, arranged in Gray code order $00,01,11,10$.
+
+\item Each cell containing a value $1$ represents a minterm where the function output is equal to $1$.
+
+\item The objective is to obtain the minimal Sum-of-Products (SOP) expression by grouping adjacent 1’s.
+
+\item Valid groupings must be formed in powers of two such as 1, 2, or 4 cells.
+
+\item While forming groups, variables that change within the group are eliminated, and only constant variables remain in the product term.
+
+\item After systematic grouping of all possible 1’s, the minimized expression becomes:
+
+$f = QS + PR'S + PQR + P'RS + P'QR'$.
+
+\item This expression represents the minimal realization of the given logic function.
+
+\end{itemize}
+
+\section*{Required Components and Connections}
+
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+S.No & Component \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Seven Segment Display \\
+4 & 220$\Omega$ Resistor \\
+5 & Jumper Wires \\
+6 & USB Cable \\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Segment & Arduino Pin \\ \hline
+a & 2 \\
+b & 3 \\
+c & 4 \\
+d & 5 \\
+e & 6 \\
+f & 7 \\
+g & 8 \\
+VCC & 5V \\
+GND & GND \\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\section*{Logic Description}
+
+\begin{itemize}
+
+\item The logic function is implemented using AND-OR realization based on the simplified SOP expression.
+
+\item Each product term such as $QS$, $PR'S$, and $PQR$ is implemented using AND operations.
+
+\item Complemented variables $P'$ and $R'$ are generated using NOT operations.
+
+\item All product terms are finally combined using OR operations to produce the output $f$.
+
+\item The final Boolean expression ensures minimal hardware complexity.
+
+\end{itemize}
+
+
+\section*{Code Uploading Steps}
+\begin{enumerate}
+        \item Create a new folder for BLINK
+        \item Write The code in main.asm
+        \item Run the main.asm with command "avra main.asm. It will compile the code and creates .hex file
+        \item Copy the .hex file to ArduinoDriod folder
+        \item connect the Arduino UNO to mobile with OTG cable
+        \item Upload the hex file using "upload precomplied" option
+        \item Observe the ouput and verify the expression
+\end{enumerate}
+
+\section*{Experimental Truth Table}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{12pt}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+P & Q & R & S & f \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 \\
+0 & 1 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 1 & 1 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{image/connection.jpg}
+\end{center}
+\section*{Conclusion}
+
+\begin{itemize}
+
+\item The Karnaugh map was analyzed systematically to derive the minimal SOP expression.
+
+\item Proper grouping of adjacent 1’s eliminated redundant variables and reduced complexity.
+
+\item The simplified expression obtained is $f = QS + PR'S + PQR + P'RS + P'QR'$.
+
+\item Hardware implementation verified the theoretical simplification.
+
+\item Therefore, the minimal SOP expression corresponds to option (A).
+
+\end{itemize}
+
+\end{document}
+

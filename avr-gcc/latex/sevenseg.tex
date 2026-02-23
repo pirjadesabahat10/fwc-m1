@@ -1,0 +1,216 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+
+\geometry{top=1in,bottom=1.5cm,left=1.5cm,right=1.5cm}
+\sectionfont{\color{blue}}
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=0.2\textwidth]{images/iiitb_logo.png}}
+\fancyhead[R]{
+Name: Pirjade Sabahat Rehan \\
+Batch: COMETFWC056 \\
+Date: 22 February 2026
+}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\vspace*{4cm}
+
+\begin{center}
+{\Huge \textbf{\textcolor{blue}{AVR-GCC 2009 EC -- Question 36 Analysis}}}
+\end{center}
+
+\section*{Question}
+
+\textbf{Q.36)} If $X = 1$ in the logic equation  
+
+$F = X + Z ( Y' + ( Z' + X Y' ) ) ( X' + Z' ( X + Y ) ) = 1$,  
+
+then determine the correct condition.
+
+\vspace{0.3cm}
+
+\begin{minipage}{0.45\textwidth}
+(A) $Y = Z$ \\[0.3cm]
+(B) $Y = Z'$
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+(C) $Z = 1$ \\[0.3cm]
+(D) $Z = 0$
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Answer: (D) $Z = 0$}
+
+\begin{flushright}
+(GATE EC 2009)
+\end{flushright}
+
+\section*{Detailed Question Analysis}
+
+\begin{itemize}
+
+\item The given Boolean expression is  
+$F = X + Z ( Y' + ( Z' + X Y' ) ) ( X' + Z' ( X + Y ) )$.
+
+\item The condition given is $X = 1$.
+
+\item When $X = 1$, then $X' = 0$.
+
+\item Substitute $X = 1$ into the expression.
+
+\item The first part becomes $1 + Z ( Y' + ( Z' + Y' ) )$.
+
+\item Since $1 + A = 1$, the first part reduces to $1$.
+
+\item The second part becomes $0 + Z' ( 1 + Y )$.
+
+\item Since $1 + Y = 1$, the second part reduces to $Z'$.
+
+\item Therefore, the overall expression simplifies to $F = 1 \cdot Z'$.
+
+\item Hence, $F = Z'$.
+
+\item For $F = 1$, we must have $Z' = 1$.
+
+\item This implies $Z = 0$.
+
+\item Therefore, option (D) is correct.
+
+\end{itemize}
+
+\section*{Logic Description}
+
+\begin{itemize}
+
+\item The Boolean function is implemented using basic logic gates.
+
+\item NOT gates generate the complemented variables $X'$, $Y'$, and $Z'$.
+
+\item AND gates implement product terms such as $X Y'$ and $Z' ( X + Y )$.
+
+\item OR gates implement summation terms such as $Z' + X Y'$ and $X + Y$.
+
+\item The two major parts of the expression are combined using an AND gate.
+
+\item When $X = 1$, the circuit reduces to $F = Z'$.
+
+\item Thus, the output becomes HIGH only when $Z = 0$.
+
+\end{itemize}
+
+\section*{Required Components and Connections}
+
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+S.No & Component \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Seven Segment Display \\
+4 & 220$\Omega$ Resistor \\
+5 & Jumper Wires \\
+6 & USB Cable \\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Segment & Arduino Pin \\ \hline
+a & Digital 2 \\
+b & Digital 3 \\
+c & Digital 4 \\
+d & Digital 5 \\
+e & Digital 6 \\
+f & Digital 7 \\
+g & Digital 8 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\section*{Code Uploading Steps}
+
+\begin{enumerate}
+\item Create project folder and write Makefile.
+\item Write the program in main.c.
+\item Run the command make to generate the .hex file.
+\item Copy the .hex file to ArduinoDroid folder.
+\item Connect Arduino UNO using OTG cable.
+\item Upload the .hex file using upload precompiled option.
+\item Observe output and verify logical condition.
+\end{enumerate}
+
+\section*{Truth Table for F and Z}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{18pt}
+\begin{tabular}{|c|c|}
+\hline
+F & Z \\
+\hline
+1 & 0 \\
+\hline
+0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Hardware Implementation}
+
+\begin{itemize}
+
+\item The simplified expression is $F = Z'$.
+
+\item When $Z = 0$, the output becomes HIGH.
+
+\item When $Z = 1$, the output becomes LOW.
+
+\item The hardware results match the theoretical simplification.
+
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/avr-gcc.jpg}
+\end{center}
+
+\section*{Conclusion Summary}
+
+\begin{itemize}
+
+\item Substituting $X = 1$ simplifies the Boolean expression.
+
+\item The expression reduces to $F = Z'$.
+
+\item For the output to be equal to $1$, the condition $Z = 0$ must hold.
+
+\item Both algebraic simplification and hardware verification confirm the result.
+
+\item Therefore, option (D) is correct.
+
+\end{itemize}
+
+\end{document}
+

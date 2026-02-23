@@ -1,0 +1,206 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{float}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\geometry{top=1in, bottom=1.5cm, left=1.5cm, right=1.5cm}
+\pagestyle{empty}
+\sectionfont{\color{blue}}
+
+\begin{document}
+
+\thispagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{
+        \includegraphics[width=0.4\textwidth]{images/iiitb_logo.png}
+}
+\fancyhead[R]{
+    Name: Pirjade Sabahat Rehan \\
+    Batch: COMETFWC056 \\
+    Date: 16 February 2026
+}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\vspace*{1cm}
+
+\begin{center}
+	{\Huge \textbf{\textcolor{blue}{GATE 2009 EE, $13^{th}$ Question Analysis}}}
+\end{center}
+
+\section*{\textbf{Question 13}}
+
+\begin{flushleft}
+13) What are the minimum numbers of NOT gates and 2-input OR gates required to design the logic of the driver for this 7-segment display?
+\end{flushleft}
+
+\vspace{0.5cm}
+
+\noindent
+\begin{minipage}{0.45\textwidth}
+(a) 3 NOT and 4 OR \\[0.3cm]
+(b) 2 NOT and 4 OR
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+(c) 1 NOT and 3 OR \\[0.3cm]
+(d) 2 NOT and 3 OR
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{flushright}
+(GATE EC 2009)
+\end{flushright}
+
+\section*{\textbf{Question Analysis:}}
+
+\begin{itemize}
+\item Let the 4-bit BCD input be $D, C, B, A$ where $A$ is the LSB.
+\item Let the output of the required 7-segment driver be $F$.
+\item The segment should glow for decimal inputs $0,2,3,5,6,7,8,9$ and remain OFF for $1,4$.
+\item The canonical SOP expression is $F = \sum m(0,2,3,5,6,7,8,9)$.
+\item The don't care conditions are $d = \sum m(10,11,12,13,14,15)$.
+\item After Karnaugh map simplification, the minimized expression is $F = A + B + \overline{C} + \overline{D}$.
+\item For NOT gates, $\overline{C}$ and $\overline{D}$ are required.
+\item For OR gates, the implementation can be written as $F = (A + B) + (\overline{C} + \overline{D})$.
+\item Hence, the minimum requirement is $2$ NOT gates and $3$ two-input OR gates.
+\end{itemize}
+
+\newpage
+
+
+\section*{\textbf{Hardware Implementation}}
+
+The above problem is implemented and tested in hardware using Arduino UNO board. Here we used a seven segment display, and inputs A B C D to display output F is 1 or 0 as per truth table and verified the expression.
+
+\section*{Required Components \& Pin Connections}
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{S.No} & \textbf{Component} \\ \hline
+1 & Arduino Uno Board \\
+2 & Breadboard \\
+3 & Seven segment (1) \\
+4 & Resistors: 220$\Omega$ (1) \\
+5 & Jumper Wires \\
+6 & USB Cable \\
+\hline
+\end{tabular}
+\end{table}
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.45\textwidth}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Component} & \textbf{Arduino Pin} \\ \hline
+Output a (seg a) & Digital 2 \\
+Output b (seg b) & Digital 3 \\
+Output c (seg c) & Digital 4 \\
+Output d (seg d) & Digital 5 \\
+Output e (seg e) & Digital 6 \\
+Output f (seg f) & Digital 7 \\
+Output g (seg g) & Digital 8 \\
+GND & GND \\
+VCC & 5V \\
+\hline
+\end{tabular}
+\end{table}
+\end{minipage}
+\end{center}
+
+\section*{Logic Description}
+
+\begin{itemize}
+\item Let the 4-bit BCD inputs be $D, C, B, A$.
+\item Initialize the inputs as $D=0, C=0, B=0, A=0$.
+\item Let the output of the required 7-segment driver be $F$.
+\item From the experimental truth table, the segment should glow for $0,2,3,5,6,7,8,9$ and remain OFF for $1,4$.
+\item The canonical expression obtained from the truth table is $F = \sum m(0,2,3,5,6,7,8,9)$.
+\item The don't care conditions are $d = \sum m(10,11,12,13,14,15)$.
+\item After Karnaugh map simplification, the minimized output expression is $F = A + B + C' + D'$.
+\item Implement the logic using two NOT operations to generate $C'$ and $D'$.
+\item Combine the terms using three two-input OR gates as $F = (A + B) + (C' + D')$.
+\item Change the inputs as per the truth table and observe the segment display.
+\item The segment glows when $F = 1$ and remains OFF when $F = 0$.
+\end{itemize}
+
+\section*{Code Uploading Steps}
+
+\begin{enumerate}
+\item Create a Platform IO project
+\item Write the code in main.cpp in src
+\item Run the PIO project with command "pio run". It will compile the code and create .hex file
+\item Copy the .hex file to ArduinoDroid folder
+\item Connect the Arduino UNO to mobile with OTG cable
+\item Upload the hex file using "upload precompiled" option
+\item Observe the output and verify the expression
+\end{enumerate}
+
+\section*{Experimental Truth Table}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\setlength{\tabcolsep}{12pt}
+\Large
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Decimal} & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} & \textbf{F (Output)} \\ 
+\hline
+0  & 0 & 0 & 0 & 0 & 1 \\ \hline
+1  & 0 & 0 & 0 & 1 & 0 \\ \hline
+2  & 0 & 0 & 1 & 0 & 1 \\ \hline
+3  & 0 & 0 & 1 & 1 & 1 \\ \hline
+4  & 0 & 1 & 0 & 0 & 0 \\ \hline
+5  & 0 & 1 & 0 & 1 & 1 \\ \hline
+6  & 0 & 1 & 1 & 0 & 1 \\ \hline
+7  & 0 & 1 & 1 & 1 & 1 \\ \hline
+8  & 1 & 0 & 0 & 0 & 1 \\ \hline
+9  & 1 & 0 & 0 & 1 & 1 \\ \hline
+10 & 1 & 0 & 1 & 0 & X \\ \hline
+11 & 1 & 0 & 1 & 1 & X \\ \hline
+12 & 1 & 1 & 0 & 0 & X \\ \hline
+13 & 1 & 1 & 0 & 1 & X \\ \hline
+14 & 1 & 1 & 1 & 0 & X \\ \hline
+15 & 1 & 1 & 1 & 1 & X \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.8cm}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/platform.jpg}
+\end{center}
+
+\section*{Conclusion}
+
+\begin{itemize}
+\item From the experimental truth table, $F = 1$ for decimal inputs $0,2,3,5,6,7,8,9$ and $F = 0$ for $1,4$.
+\item The minimized Boolean expression obtained is $F = A + B + C' + D'$.
+\item The logic implementation requires $2$ NOT gates and $3$ two-input OR gates.
+\item This matches option (D) from the original GATE question.
+\item The hardware experiment confirms the theoretical logic of the 7-segment driver.
+\end{itemize}
+
+\end{document}
+
