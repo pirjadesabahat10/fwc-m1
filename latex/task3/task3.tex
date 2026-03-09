@@ -1,0 +1,394 @@
+ \documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\geometry{a4paper, margin=0.75in, top=1.2in, bottom=1in}
+\setlength{\headheight}{60pt}
+
+\fancypagestyle{firstpage}{
+    \fancyhf{} 
+    \renewcommand{\headrulewidth}{0.4pt} % The separation line
+    \fancyhead[L]{
+\includegraphics[width=0.3\textwidth]{figure/iiitb_logo.png}}
+    \fancyhead[R]{%
+        \begin{tabular}{@{}r@{}}
+            \textbf{Name:} Pirjade Sabahat Rehan\\
+            \textbf{ID:} COMETFWC056\\
+            \textbf{Date:} February 1, 2026
+        \end{tabular}
+    }
+}
+
+\newtcolorbox{headerbox}[1]{
+    colback=white,
+    colframe=black,
+    sharp corners,
+    boxrule=0.8pt,
+    width=#1,
+    on line,
+    fontupper=\large,
+    boxsep=5pt,
+    left=10pt,
+    right=10pt,
+    top=2pt,
+    bottom=2pt
+}
+
+\begin{document}
+\thispagestyle{firstpage}
+
+
+\noindent
+\begin{minipage}[c]{0.25\textwidth}
+    \includegraphics[width=0.8\linewidth]{figure/logo.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.7\textwidth}
+    \raggedleft
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Language: \textbf{English}}}
+
+    \vspace{0.3cm}
+
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Day: \textbf{1}}}
+\end{minipage}
+
+\hrule
+
+\begin{flushright}
+    \textit{Wednesday, July 7, 2010}
+\end{flushright}
+
+\vspace{2em}
+
+
+\noindent \textbf{Problem 1.} Determine all functions $f:\mathbb{R}\rightarrow\mathbb{R}$ such that the equality
+\begin{center}
+   $f(\lfloor x\rfloor y)=f(x)\lfloor f(y)\rfloor$ 
+\end{center}
+holds for all $x, y \in \mathbb{R}$. (Here $\lfloor z \rfloor$ denotes the greatest integer less than or equal to $z$.)
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 2.} Let $I$ be the incentre of triangle $ABC$ and let $\Gamma$ be its circumcircle. Let the line $AI$ intersect $\Gamma$ again at $D$. Let $E$ be a point on the arc $\overline{BDC}$ and $F$ a point on the side $BC$ such that
+\begin{center}
+    $\angle BAF = \angle CAE < \frac{1}{2} \angle BAC.$
+\end{center}
+Finally, let $G$ be the midpoint of the segment $IF$. Prove that the lines $DG$ and $EI$ intersect on $\Gamma$.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 3.} Let $\mathbb{N}$ be the set of positive integers. Determine all functions $g:\mathbb{N}\rightarrow\mathbb{N}$ such that
+\begin{center}
+    $(g(m)+n)(m+g(n))$
+\end{center}
+is a perfect square for all $m, n \in \mathbb{N}$.
+
+\vfill
+
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+\newpage
+
+
+
+\noindent
+\begin{minipage}[c]{0.25\textwidth}
+    \includegraphics[width=0.8\linewidth]{figure/logo.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.7\textwidth}
+    \raggedleft
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Language: \textbf{English}}}
+
+    \vspace{0.3cm}
+
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Day: \textbf{2}}}
+\end{minipage}
+
+\hrule
+
+\begin{flushright}
+    \textit{Thursday, July 8, 2010}
+\end{flushright}
+
+\vspace{2em}
+
+\noindent \textbf{Problem 4.} Let $P$ be a point inside the triangle $ABC$. The lines $AP, BP$ and $CP$ intersect the circumcircle $\Gamma$ of triangle $ABC$ again at the points $K, L$ and $M$ respectively. The tangent to $\Gamma$ at $C$ intersects the line $AB$ at $S$. Suppose that $SC=SP$. Prove that $MK=ML$.
+
+\vspace{2.5em}
+\noindent \textbf{Problem 5.} In each of six boxes $B_{1}, B_{2}, B_{3}, B_{4}, B_{5}, B_{6}$ there is initially one coin. There are two types of operation allowed:
+    \textbf{Type 1:} Choose a nonempty box $B_{j}$ with $1 \le j \le 5$. Remove one coin from $B_{j}$ and add two coins to $B_{j+1}$.\\
+    
+    \textbf{Type 2:} Choose a nonempty box $B_{k}$ with $1 \le k \le 4$. Remove one coin from $B_{k}$ and exchange the contents of (possibly empty) boxes $B_{k+1}$ and $B_{k+2}$.\\
+Determine whether there is a finite sequence of such operations that results in boxes $B_{1}, B_{2}, B_{3}, B_{4}, B_{5}$ being empty and box $B_{6}$ containing exactly $2010^{2010^{2010}}$ coins. (Note that $a^{b^{c}}=a^{(b^{c})}$.)
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 6.} Let $a_{1}, a_{2}, a_{3}, \dots$ be a sequence of positive real numbers. Suppose that for some positive integer $s$, we have
+\begin{center}
+$a_n = \max\{ a_k + a_{n-k} \mid 1 \le k \le n-1 \}$
+\end{center}
+for all $n > s$. Prove that there exist positive integers $\ell$ and $N$, with $\ell \le s$, such that for all $n \ge N$,
+$a_{n} = a_{\ell} + a_{n-\ell}.$
+
+\vfill
+
+
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+\newpage
+
+
+
+\noindent
+\begin{minipage}[c]{0.25\textwidth}
+    \includegraphics[width=0.75\linewidth]{figure/logo2.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.7\textwidth}
+    \raggedleft
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Language: \textbf{English}}}
+
+    \vspace{0.3cm}
+
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Day: \textbf{1}}}
+\end{minipage}
+
+\hrule
+\begin{flushright}
+    \textit{Monday, July 18, 2011}
+\end{flushright}
+
+\vspace{2em}
+
+\noindent \textbf{Problem 1.} Given any set $A=\{a_{1},a_{2},a_{3},a_{4}\}$ of four distinct positive integers, we denote the sum $a_{1}+a_{2}+a_{3}+a_{4}$ by $s_{A}$. Let $n_{A}$ denote the number of pairs $(i, j)$ with $1\le i<j\le4$ for which $a_{i}+a_{j}$ divides $s_{A}$. Find all sets $A$ of four distinct positive integers which achieve the largest possible value of $n_{A}$.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 2.} Let $S$ be a finite set of at least two points in the plane. Assume that no three points of $S$ are collinear. A windmill is a process that starts with a line $l$ going through a single point $P\in\mathcal{S}$. The line rotates clockwise about the pivot $P$ until the first time that the line meets some other point belonging to $S$. This point, $Q$, takes over as the new pivot, and the line now rotates clockwise about $Q$, until it next meets a point of $S$. This process continues indefinitely. Show that we can choose a point $P$ in $S$ and a line $l$ going through $P$ such that the resulting windmill uses each point of $\mathcal{S}$ as a pivot infinitely many times.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 3.} Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be a real-valued function defined on the set of real numbers that satisfies
+\begin{center}
+    $f(x+y)\le yf(x)+f(f(x))$
+\end{center}
+for all real numbers $x$ and $y$. Prove that $f(x)=0$ for all $x\le0$.
+
+\vfill
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+\newpage
+
+\noindent
+\begin{minipage}[c]{0.25\textwidth}
+    \includegraphics[width=0.75\linewidth]{figure/logo2.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.7\textwidth}
+    \raggedleft
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Language: \textbf{English}}}
+
+    \vspace{0.3cm}
+
+    \fbox{\parbox[c][0.8cm][c]{3cm}{\centering Day: \textbf{2}}}
+\end{minipage}
+
+\hrule
+
+\begin{flushright}
+    \textit{Tuesday, July 19, 2011}
+\end{flushright}
+
+\vspace{2em}
+
+\noindent \textbf{Problem 4.} Let $n>0$ be an integer. We are given a balance and $n$ weights of weight $2^{0}, 2^{1}, \dots, 2^{n-1}$. We are to place each of the $n$ weights on the balance, one after another, in such a way that the right pan is never heavier than the left pan. At each step we choose one of the weights that has not yet been placed on the balance, and place it on either the left pan or the right pan, until all of the weights have been placed. Determine the number of ways in which this can be done.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 5.} Let $f$ be a function from the set of integers to the set of positive integers. Suppose that, for any two integers $m$ and $n$, the difference $f(m)-f(n)$ is divisible by $f(m-n)$. Prove that, for all integers $m$ and $n$ with $f(m)\le f(n)$, the number $f(n)$ is divisible by $f(m)$.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 6.} Let $ABC$ be an acute triangle with circumcircle $\Gamma$. Let $l$ be a tangent line to $\Gamma$, and let $l_{a}$, $l_{b}$ and $l_{c}$ be the lines obtained by reflecting $l$ in the lines $BC, CA$ and $AB$, respectively. Show that the circumcircle of the triangle determined by the lines $l_{a}, l_{b}$ and $l_{c}$ is tangent to the circle $\Gamma$.
+
+\vfill
+
+
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+
+\newpage
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=0.3\textwidth]{figure/logo3.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    \begin{headerbox}{2.7in}
+        Language: \textbf{\Large English}
+    \end{headerbox} \\[10pt]
+    \begin{headerbox}{1.5in}
+        Day: \textbf{\Large 1}
+    \end{headerbox}
+\end{minipage}
+
+\hrule
+
+\begin{flushright}
+    \textit{Tuesday, July 10, 2012}
+\end{flushright}
+
+\vspace{2em}
+
+\noindent \textbf{Problem 1.} Given triangle $ABC$ the point $J$ is the centre of the excircle opposite the vertex $A$. This excircle is tangent to the side $BC$ at $M$, and to the lines $AB$ and $AC$ at $K$ and $L$, respectively. The lines $LM$ and $BJ$ meet at $F$, and the lines $KM$ and $CJ$ meet at $G$. Let $S$ be the point of intersection of the lines $AF$ and $BC$, and let $T$ be the point of intersection of the lines $AG$ and $BC$. Prove that $M$ is the midpoint of $ST$.
+
+(The excircle of $ABC$ opposite the vertex $A$ is the circle that is tangent to the line segment $BC$, to the ray $AB$ beyond $B$, and to the ray $AC$ beyond $C$.)
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 2.} Let $n\ge3$ be an integer, and let $a_{2},a_{3},...,a_{n}$ be positive real numbers such that $a_{2}a_{3}\dots a_{n}=1$. Prove that
+\begin{center}
+    $(1+a_{2})^{2}(1+a_{3})^{3}\cdot\cdot\cdot(1+a_{n})^{n}>n^{n}.$
+\end{center}
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 3.} The liar's guessing game is a game played between two players $A$ and $B$. The rules of the game depend on two positive integers $k$ and $n$ which are known to both players.
+
+At the start of the game $A$ chooses integers $x$ and $N$ with $1\le x\le N$. Player $A$ keeps $x$ secret, and truthfully tells $N$ to player $B$. Player $B$ now tries to obtain information about $x$ by asking player $A$ questions as follows: each question consists of $B$ specifying an arbitrary set $S$ of positive integers (possibly one specified in some previous question), and asking $A$ whether $x$ belongs to $S$. Player $B$ may ask as many such questions as he wishes. After each question, player $A$ must immediately answer it with yes or no, but is allowed to lie as many times as she wants; the only restriction is that, among any $k+1$ consecutive answers, at least one answer must be truthful.
+
+After $B$ has asked as many questions as he wants, he must specify a set $X$ of at most $n$ positive integers. If $x$ belongs to $X$, then $B$ wins; otherwise, he loses. Prove that:
+\begin{enumerate}
+    \item If $n\ge2^{k}$, then $B$ can guarantee a win.
+    \item For all sufficiently large $k$, there exists an integer $n\ge1.99^{k}$ such that $B$ cannot guarantee a win.
+\end{enumerate}
+
+\vfill
+
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+    \vspace{0pt}
+    \includegraphics[height=1.7cm]{figure/logo3.jpg} % change logo name here
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth}
+    \vspace{0pt}
+    \raggedleft
+
+    \fbox{
+        \begin{minipage}[c][0.9cm][c]{4cm}
+        \centering Language: \textbf{English}
+        \end{minipage}
+    }
+
+    \vspace{0.4cm}
+
+    \fbox{
+        \begin{minipage}[c][0.9cm][c]{4cm}
+        \centering Day: \textbf{1} % change day number here
+        \end{minipage}
+    }
+
+\end{minipage}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\begin{flushright}
+    \textit{Wednesday, July 11, 2012}
+\end{flushright}
+
+\vspace{2em}
+
+\noindent \textbf{Problem 4.} Find all functions $f:\mathbb{Z}\rightarrow\mathbb{Z}$ such that, for all integers $a, b, c$ that satisfy $a+b+c=0$ the following equality holds:
+\begin{center}
+    $f(a)^{2}+f(b)^{2}+f(c)^{2}=2f(a)f(b)+2f(b)f(c)+2f(c)f(a).$
+\end{center}
+(Here $\mathbb{Z}$ denotes the set of integers.)
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 5.} Let $ABC$ be a triangle with $\angle BCA=90^{\circ}$, and let $D$ be the foot of the altitude from $C$. Let $X$ be a point in the interior of the segment $CD$. Let $K$ be the point on the segment $AX$ such that $BK=BC$. Similarly, let $L$ be the point on the segment $BX$ such that $AL=AC$. Let $M$ be the point of intersection of $AL$ and $BK$. Prove that $MK=ML$.
+
+\vspace{2.5em}
+
+\noindent \textbf{Problem 6.} Find all positive integers $n$ for which there exist non-negative integers $a_{1},a_{2},...,a_{n}$ such that
+\begin{center}
+    $\frac{1}{2^{a_{1}}}+\frac{1}{2^{a_{2}}}+\cdot\cdot\cdot+\frac{1}{2^{a_{n}}}=\frac{1}{3^{a_{1}}}+\frac{2}{3^{a_{2}}}+\cdot\cdot\cdot+\frac{n}{3^{a_{n}}}=1.$
+\end{center}
+
+\vfill
+
+
+\noindent \begin{minipage}[t]{0.4\textwidth}
+    \vspace{2pt}
+    \textit{Language: English}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{2pt}
+    \raggedleft
+    \textit{Time: 4 hours and 30 minutes} \\
+    \textit{Each problem is worth 7 points}
+\end{minipage}
+
+
+
+\end{document}
