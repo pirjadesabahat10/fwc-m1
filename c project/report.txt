@@ -1,0 +1,5 @@
+AI Powered Memory Allocator Report
+Used Blocks: 0
+Free Blocks: 0
+Total Blocks: 0
+Total Bytes: 0
